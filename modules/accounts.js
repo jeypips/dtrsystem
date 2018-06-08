@@ -14,8 +14,8 @@ angular.module('app-module', ['bootstrap-modal','ui.bootstrap','block-ui','boots
 			scope.views.list = true;
 			
 			scope.btns = {
-				ok: {disabled: false, label: 'Save'},
-				cancel: {disabled: false, label: 'Cancel'}
+				ok: { btn: false, label: 'Save'},
+				cancel: { btn: false, label: 'Cancel'},
 			};
 
 			scope.user_account = {};
@@ -80,22 +80,16 @@ angular.module('app-module', ['bootstrap-modal','ui.bootstrap','block-ui','boots
 		
 		function mode(scope,row) {
 			
-			if (row != null) {
-
-				scope.btns = {
-					ok: {disabled: false, label: 'Update'},
-					cancel: {disabled: false, label: 'Close'}
-				};				
-			
-			
+			if (row == null) {
+				scope.btns.ok.label = 'Save';
+				scope.btns.ok.btn = false;
+				scope.btns.cancel.label = 'Cancel';
+				scope.btns.cancel.btn = false;
 			} else {
-				
-				scope.btns = {
-					ok: {disabled: false, label: 'Save'},
-					cancel: {disabled: false, label: 'Cancel'}
-				};				
-				
-			};
+				scope.btns.ok.label = 'Update';
+				scope.btns.cancel.label = 'Close';
+				scope.btns.ok.btn = true;
+			}
 			
 		};
 		
@@ -152,6 +146,12 @@ angular.module('app-module', ['bootstrap-modal','ui.bootstrap','block-ui','boots
 			scope.user_account.id = 0;			
 			
 			self.list(scope);
+			
+		};
+		
+		self.edit = function(scope) {
+			
+			scope.btns.ok.btn = !scope.btns.ok.btn;
 			
 		};
 		
