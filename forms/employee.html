@@ -1,7 +1,7 @@
 <div class="col-lg-12">
 	<div class="card">
 		<div class="card-header">
-			<h3><i class="fa fa-info"></i> Department Form<button class="btn btn-outline-success float-right" ng-click="app.edit(this)"><i class="fa" ng-class="{'fa-edit': btns.ok.btn, 'fa-ban': !btns.ok.btn}"></i></button></h3>
+			<h3><i class="fa fa-info"></i> Employee Form<button class="btn btn-outline-success float-right" ng-click="app.edit(this)"><i class="fa" ng-class="{'fa-edit': btns.ok.btn, 'fa-ban': !btns.ok.btn}"></i></button></h3>
 		</div>
 		<div class="card-body">
 			<form name="formHolder.employee" novalidate autocomplete="off">
@@ -13,13 +13,13 @@
 							<div class="invalid-feedback">This field is required</div>
 						</div>
 					</div>
-					<!-- <div class="col-lg-4">
+					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Department</span>
-							<select name="employee_dept" ng-class="{'is-invalid': formHolder.employee.employee_dept.$touched && formHolder.employee.employee_dept.$invalid}" class="form-control input-default" ng-model="employee.employee_dept" required></select>
+							<select name="employee_dept" ng-class="{'is-invalid': formHolder.employee.employee_dept.$touched && formHolder.employee.employee_dept.$invalid}" class="form-control input-default" ng-model="employee.employee_dept" ng-options="d.dept_name for d in departments track by d.dept_id" ng-disabled="btns.ok.btn" required></select>
 							<div class="invalid-feedback">This field is required</div>
 						</div>
-					</div> -->
+					</div>
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Machine ID</span>

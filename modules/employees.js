@@ -24,7 +24,22 @@ angular.module('app-module', ['bootstrap-modal','ui.bootstrap','block-ui','boots
 			scope.employees = [];
 			
 		};
-
+		
+		function departments(scope) {
+			
+			$http({
+				method: 'POST',
+				url: 'api/suggestions/departments.php'
+			}).then(function mySucces(response) {
+				
+				scope.departments = response.data;
+				
+			},function myError(response) {
+				
+			});	
+			
+		};
+		
 		self.list = function(scope) {
 			
 			bui.show();
@@ -85,6 +100,8 @@ angular.module('app-module', ['bootstrap-modal','ui.bootstrap','block-ui','boots
 			bui.show();
 			
 			scope.views.list = false;
+			
+			departments(scope);
 			
 			mode(scope,row);
 			
