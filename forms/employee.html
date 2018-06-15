@@ -1,7 +1,7 @@
 <div class="col-lg-12">
 	<div class="card">
 		<div class="card-header">
-			<h3><i class="fa fa-info"></i> Department Form</h3>
+			<h3><i class="fa fa-info"></i> Employee Form<button class="btn btn-outline-success float-right" ng-click="app.edit(this)"><i class="fa" ng-class="{'fa-edit': btns.ok.btn, 'fa-ban': !btns.ok.btn}"></i></button></h3>
 		</div>
 		<div class="card-body">
 			<form name="formHolder.employee" novalidate autocomplete="off">
@@ -9,21 +9,21 @@
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Employee ID</span>
-							<input type="text" name="employee_fid" ng-class="{'is-invalid': formHolder.employee.employee_fid.$touched && formHolder.employee.employee_fid.$invalid}" class="form-control input-default" ng-model="employee.employee_fid" required>
+							<input type="text" name="employee_fid" ng-class="{'is-invalid': formHolder.employee.employee_fid.$touched && formHolder.employee.employee_fid.$invalid}" class="form-control input-default" ng-model="employee.employee_fid" ng-disabled="btns.ok.btn" required>
 							<div class="invalid-feedback">This field is required</div>
 						</div>
 					</div>
-					<!-- <div class="col-lg-4">
+					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Department</span>
-							<select name="employee_dept" ng-class="{'is-invalid': formHolder.employee.employee_dept.$touched && formHolder.employee.employee_dept.$invalid}" class="form-control input-default" ng-model="employee.employee_dept" required></select>
+							<select name="employee_dept" ng-class="{'is-invalid': formHolder.employee.employee_dept.$touched && formHolder.employee.employee_dept.$invalid}" class="form-control input-default" ng-model="employee.employee_dept" ng-options="d.dept_name for d in departments track by d.dept_id" ng-disabled="btns.ok.btn" required></select>
 							<div class="invalid-feedback">This field is required</div>
 						</div>
-					</div> -->
+					</div>
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Machine ID</span>
-							<input type="text" name="employee_mid" ng-class="{'is-invalid': formHolder.employee.employee_mid.$touched && formHolder.employee.employee_mid.$invalid}" class="form-control input-default" ng-model="employee.employee_mid" required>
+							<input type="text" name="employee_mid" ng-class="{'is-invalid': formHolder.employee.employee_mid.$touched && formHolder.employee.employee_mid.$invalid}" class="form-control input-default" ng-model="employee.employee_mid" ng-disabled="btns.ok.btn" required>
 							<div class="invalid-feedback">This field is required</div>
 						</div>
 					</div>
@@ -32,21 +32,21 @@
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>First Name</span>
-							<input type="text" name="employee_firstname" ng-class="{'is-invalid': formHolder.employee.employee_firstname.$touched && formHolder.employee.employee_firstname.$invalid}" class="form-control input-default" ng-model="employee.employee_firstname" required>
+							<input type="text" name="employee_firstname" ng-class="{'is-invalid': formHolder.employee.employee_firstname.$touched && formHolder.employee.employee_firstname.$invalid}" class="form-control input-default" ng-model="employee.employee_firstname" ng-disabled="btns.ok.btn" required>
 							<div class="invalid-feedback">This field is required</div>
 						</div>
 					</div>
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Last Name</span>
-							<input type="text" name="employee_lastname" ng-class="{'is-invalid': formHolder.employee.employee_lastname.$touched && formHolder.employee.employee_lastname.$invalid}" class="form-control input-default" ng-model="employee.employee_lastname" required>
+							<input type="text" name="employee_lastname" ng-class="{'is-invalid': formHolder.employee.employee_lastname.$touched && formHolder.employee.employee_lastname.$invalid}" class="form-control input-default" ng-model="employee.employee_lastname" ng-disabled="btns.ok.btn" required>
 							<div class="invalid-feedback">This field is required</div>
 						</div>
 					</div>
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Middle Name</span>
-							<input type="text" name="employee_middlename" ng-class="{'is-invalid': formHolder.employee.employee_middlename.$touched && formHolder.employee.employee_middlename.$invalid}" class="form-control input-default" ng-model="employee.employee_middlename" required>
+							<input type="text" name="employee_middlename" ng-class="{'is-invalid': formHolder.employee.employee_middlename.$touched && formHolder.employee.employee_middlename.$invalid}" class="form-control input-default" ng-model="employee.employee_middlename" ng-disabled="btns.ok.btn" required>
 							<div class="invalid-feedback">This field is required</div>
 						</div>
 					</div>
@@ -55,7 +55,7 @@
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Gender</span>
-							<select name="employee_gender" ng-class="{'is-invalid': formHolder.employee.employee_gender.$touched && formHolder.employee.employee_gender.$invalid}" class="form-control input-default" ng-model="employee.employee_gender" required>
+							<select name="employee_gender" ng-class="{'is-invalid': formHolder.employee.employee_gender.$touched && formHolder.employee.employee_gender.$invalid}" class="form-control input-default" ng-model="employee.employee_gender" ng-disabled="btns.ok.btn" required>
 							<option value="Male">Male</option>
 							<option value="Female">Female</option>
 							</select>
@@ -65,14 +65,14 @@
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Date Of Birth</span>
-							<input type="date" name="employee_dob" ng-class="{'is-invalid': formHolder.employee.employee_dob.$touched && formHolder.employee.employee_dob.$invalid}" class="form-control input-default" ng-model="employee.employee_dob" required>
+							<input type="date" name="employee_dob" ng-class="{'is-invalid': formHolder.employee.employee_dob.$touched && formHolder.employee.employee_dob.$invalid}" class="form-control input-default" ng-model="employee.employee_dob" ng-disabled="btns.ok.btn" required>
 							<div class="invalid-feedback">This field is required</div>
 						</div>
 					</div>
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Age</span>
-							<input type="number" name="employee_age" ng-class="{'is-invalid': formHolder.employee.employee_age.$touched && formHolder.employee.employee_age.$invalid}" class="form-control input-default" ng-model="employee.employee_age" required>
+							<input type="number" name="employee_age" ng-class="{'is-invalid': formHolder.employee.employee_age.$touched && formHolder.employee.employee_age.$invalid}" class="form-control input-default" ng-model="employee.employee_age" ng-disabled="btns.ok.btn" required>
 							<div class="invalid-feedback">This field is required</div>
 						</div>
 					</div>
@@ -81,19 +81,19 @@
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Contact No(s)</span>
-							<input type="text" name="employee_contacts" class="form-control input-default" ng-model="employee.employee_contacts">
+							<input type="text" name="employee_contacts" class="form-control input-default" ng-model="employee.employee_contacts" ng-disabled="btns.ok.btn">
 						</div>
 					</div>
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Address</span>
-							<input type="text" name="employee_address" class="form-control input-default" ng-model="employee.employee_address">
+							<input type="text" name="employee_address" class="form-control input-default" ng-model="employee.employee_address" ng-disabled="btns.ok.btn">
 						</div>
 					</div>
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Position</span>
-							<input type="text" name="employee_position" class="form-control input-default" ng-model="employee.employee_position">
+							<input type="text" name="employee_position" class="form-control input-default" ng-model="employee.employee_position" ng-disabled="btns.ok.btn">
 						</div>
 					</div>
 				</div>
@@ -101,7 +101,7 @@
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Educational Attainment</span>
-							<select name="employee_attainment" class="form-control input-default" ng-model="employee.employee_attainment">
+							<select name="employee_attainment" class="form-control input-default" ng-model="employee.employee_attainment" ng-disabled="btns.ok.btn">
 							<option value="Elementary">Elementary</option>
 							<option value="Secondary">Secondary</option>
 							<option value="College Undergraduate">College Undergraduate</option>
@@ -115,13 +115,13 @@
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Eligibility</span>
-							<input type="text" name="employee_eligibility" class="form-control input-default" ng-model="employee.employee_eligibility">
+							<input type="text" name="employee_eligibility" class="form-control input-default" ng-model="employee.employee_eligibility" ng-disabled="btns.ok.btn">
 						</div>
 					</div>
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Years in service</span>
-							<input type="text" name="employee_years" class="form-control input-default" ng-model="employee.employee_years">
+							<input type="text" name="employee_years" class="form-control input-default" ng-model="employee.employee_years" ng-disabled="btns.ok.btn">
 						</div>
 					</div>
 				</div>
@@ -129,19 +129,19 @@
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Status of appointment</span>
-							<input type="text" name="employee_appointment" class="form-control input-default" ng-model="employee.employee_appointment">
+							<input type="text" name="employee_appointment" class="form-control input-default" ng-model="employee.employee_appointment" ng-disabled="btns.ok.btn">
 						</div>
 					</div>
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>SSS</span>
-							<input type="text" name="employee_sss" class="form-control input-default" ng-model="employee.employee_sss">
+							<input type="text" name="employee_sss" class="form-control input-default" ng-model="employee.employee_sss" ng-disabled="btns.ok.btn">
 						</div>
 					</div>
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Philhealth</span>
-							<input type="text" name="employee_philhealth" class="form-control input-default" ng-model="employee.employee_philhealth">
+							<input type="text" name="employee_philhealth" class="form-control input-default" ng-model="employee.employee_philhealth" ng-disabled="btns.ok.btn">
 						</div>
 					</div>
 				</div>
@@ -149,19 +149,19 @@
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>HDMF</span>
-							<input type="text" name="employee_hdmf" class="form-control input-default" ng-model="employee.employee_hdmf">
+							<input type="text" name="employee_hdmf" class="form-control input-default" ng-model="employee.employee_hdmf" ng-disabled="btns.ok.btn">
 						</div>
 					</div>
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>TIN</span>
-							<input type="text" name="employee_tin" class="form-control input-default" ng-model="employee.employee_tin">
+							<input type="text" name="employee_tin" class="form-control input-default" ng-model="employee.employee_tin" ng-disabled="btns.ok.btn">
 						</div>
 					</div>
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Remarks</span>
-							<input type="text" name="employee_remarks" class="form-control input-default" ng-model="employee.employee_remarks">
+							<input type="text" name="employee_remarks" class="form-control input-default" ng-model="employee.employee_remarks" ng-disabled="btns.ok.btn">
 						</div>
 					</div>
 				</div>
@@ -169,7 +169,7 @@
 					<div class="col-lg-4">
 						<div class="form-group">
 							<span>Scheme</span>
-							<input type="text" name="employee_scheme" class="form-control input-default" ng-model="employee.employee_scheme">
+							<input type="text" name="employee_scheme" class="form-control input-default" ng-model="employee.employee_scheme" ng-disabled="btns.ok.btn">
 						</div>
 					</div>
 				</div>
@@ -178,7 +178,7 @@
 			<div class="col-lg-12">
 				<div class="row pull-right">
 					<button class="btn btn-outline-secondary" ng-click="app.cancel(this)" style="margin-right: 5px;">{{btns.cancel.label}}</button>
-					<button class="btn btn-success" ng-click="app.save(this)">{{btns.ok.label}}</button>
+					<button class="btn btn-success" ng-click="app.save(this)" ng-disabled="btns.ok.btn">{{btns.ok.label}}</button>
 				</div>
 			</div>
 		</div>

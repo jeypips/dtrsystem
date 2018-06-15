@@ -9,6 +9,7 @@ $con = new pdo_db("employees");
 $data = $_POST;
 
 if ($data['employee_dob'] != null) $data['employee_dob'] = date("Y-m-d",strtotime($data['employee_dob']));
+$data['employee_dept'] = $data['employee_dept']['dept_id'];
 
 if ($data['employee_id']) {
 	

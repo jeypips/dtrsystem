@@ -49,30 +49,20 @@
                             <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5><small>Help and Support</small></h5>
+                                    <h5><small>About</small></h5>
                                 </div>
-
                                 <!-- item-->
-                                <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">                                    
+                                <a target="_blank" href="" class="dropdown-item notify-item">                                    
                                     <p class="notify-details ml-0">
-                                        <b>Do you want custom development to integrate this theme?</b>
-                                        <span>Contact Us</span>
+                                        <b>eDTR and INFORMATION SYSTEM is a Secured Electronic record management software system specifically designed for Municipality of Sta. Lucia, Ilocos Sur's personal information and daily time record. VERSION 2.0</b>
+                                        <span>All Rights Reserved © IT Worx</span>
+                                        <span>Computer Sales and Services & sly@limited</span>
                                     </p>
-                                </a>
-
-                                <!-- item-->
-                                <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro" class="dropdown-item notify-item">                                    
-                                    <p class="notify-details ml-0">
-                                        <b>Do you want PHP version of the theme that save dozens of hours of work?</b>
-                                        <span>Try Pike Admin PRO</span>
-                                    </p>
-                                </a>                               
-
+                                </a>  
                                 <!-- All-->
                                 <a title="Clcik to visit Pike Admin Website" target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item notify-all">
-                                    <i class="fa fa-link"></i> Visit Pike Admin Website
+                                    <i class="fa fa-link"></i> eDTR | Information System
                                 </a>
-
                             </div>
                         </li>
 						
@@ -204,20 +194,21 @@
 		<div class="sidebar-inner leftscroll">
 			<div id="sidebar-menu">
 				<ul>
-					<li class="submenu">
+					<li class="submenu" ng-show="profile.pages_access.dashboard.value">
 						<a class="active" href="index.html"><i class="fa fa-fw fa-tachometer"></i><span> Dashboard </span> </a>
 					</li>
-					<li class="submenu">
+					<li class="submenu" ng-show="profile.pages_access.departments.value">
 						<a class="" href="departments.html"><i class="fa fa-fw fa-building"></i><span> Departments </span> </a>
 					</li>
-					<li class="submenu">
+					<li class="submenu" ng-show="profile.pages_access.employees.value">
 						<a class="" href="employees.html"><i class="fa fa-fw fa-users"></i><span> Employees </span> </a>
 					</li>
-					<li class="submenu">
+					<li class="submenu" ng-show="profile.pages_access.maintenance.value">
 						<a href="#"><i class="fa fa-fw fa-code"></i> <span> Maintenance </span> <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
                                 <li><a href="groups.html">Groups</a></li>
 								<li><a href="accounts.html">Accounts</a></li>
+								<li><a href="schemes.html">Schemes</a></li>
                             </ul>
                     </li>
 				</ul>

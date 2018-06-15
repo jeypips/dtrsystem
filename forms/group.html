@@ -2,7 +2,7 @@
 <div class="col-lg-12">
 	<div class="card">
 		<div class="card-header">
-			<h3><i class="fa fa-info"></i> Group Form</h3>
+			<h3><i class="fa fa-info"></i> Group Form<button class="btn btn-outline-success float-right" ng-click="app.edit(this)"><i class="fa" ng-class="{'fa-edit': btns.ok.btn, 'fa-ban': !btns.ok.btn}"></i></button></h3>
 		</div>
 		<div class="card-body">
 		<div class="basic-form">
@@ -11,14 +11,14 @@
 					<div class="col-lg-4">
 						<div class="form-group">
 							<label>Group Name</label>
-							<input type="text" ng-class="{'is-invalid': formHolder.group.name.$touched && formHolder.group.name.$invalid}" name="name" class="form-control input-default" ng-model="group.name" required>
+							<input type="text" ng-class="{'is-invalid': formHolder.group.name.$touched && formHolder.group.name.$invalid}" name="name" class="form-control input-default" ng-model="group.name" ng-disabled="btns.ok.btn" required>
 							<div class="invalid-feedback">This field is required</div>
 						</div>
 					</div>
 					<div class="col-lg-4">
 						<div class="form-group">
 							<label>Group Description</label>
-							<input type="text" name="description" ng-class="{'is-invalid': formHolder.group.description.$touched && formHolder.group.description.$invalid}" class="form-control input-default" ng-model="group.description" required>
+							<input type="text" name="description" ng-class="{'is-invalid': formHolder.group.description.$touched && formHolder.group.description.$invalid}" class="form-control input-default" ng-model="group.description" ng-disabled="btns.ok.btn"required>
 							<div class="invalid-feedback">This field is required</div>
 						</div>
 					</div>
@@ -31,7 +31,7 @@
 							<h6>{{p.description}}</h6>
 							<div class="checkbox">
 								<label class="switch">
-								  <input type="checkbox" class="flat" ng-checked="pp.value" ng-model="pp.value" ng-disabled="controls.ok.btn">
+								  <input type="checkbox" class="flat" ng-checked="pp.value" ng-model="pp.value" ng-disabled="btns.ok.btn">
 								  <span class="slider round"></span>
 								</label>
 								<p>{{pp.description}}</p>
