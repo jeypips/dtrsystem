@@ -8,16 +8,14 @@ $con = new pdo_db("user_accounts");
 
 $data = $_POST;
 
-$data['groups'] = $data['groups']['group_id'];
-
 if ($data['id']) {
 	
-	$user_account = $con->updateData($data,'id');
+	$user_account = $con->updateObj($data,'id');
 	
 } else {
 	
 	unset($data['id']);	
-	$user_account = $con->insertData($data);
+	$user_account = $con->insertObj($data);
 	
 };
 
