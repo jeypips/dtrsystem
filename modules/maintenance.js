@@ -16,6 +16,9 @@ angular.module('app-module', ['ui.bootstrap','bootstrap-modal','block-ui','boots
 				cancel: { btn: false, label: 'Cancel'},
 			};
 			
+			scope[scope.form.name]= {};
+			scope[scope.form.name][scope.form.id] = 0;	
+			
 		};
 		
 		var alerts = {
@@ -132,6 +135,13 @@ angular.module('app-module', ['ui.bootstrap','bootstrap-modal','block-ui','boots
 						}).then(function success(response) {
 							
 							scope[scope.form.name] = angular.copy(response.data);
+						
+							if (scope.form.name == 'group'){
+									
+								privileges(scope);
+							
+							};
+							
 							bui.hide();							
 							
 						}, function error(response) {
@@ -152,12 +162,12 @@ angular.module('app-module', ['ui.bootstrap','bootstrap-modal','block-ui','boots
 				}, 500);
 			});
 			
-			if (scope.form.name == 'group') {
-				
-				privileges(scope);				
-				
-			};
+			if (scope.form.name == 'group'){
+									
+				privileges(scope);
 			
+			};
+							
 			if (scope.form.name == 'user_account') {
 				
 				groups(scope);				
@@ -255,7 +265,7 @@ angular.module('app-module', ['ui.bootstrap','bootstrap-modal','block-ui','boots
 			$http({
 			  method: 'POST',
 			  url: 'handlers/privileges.php',
-			   data: {id: scope.group.group_id}
+			   data: {id: scope[scope.form.name][scope.form.id]}
 			}).then(function mySuccess(response) {
 				
 				scope.privileges = angular.copy(response.data);
