@@ -14,20 +14,37 @@ angular.module('app-module', ['ui.bootstrap','bootstrap-modal','block-ui','boots
 			scope.btns = {
 				ok: { btn: false, label: 'Save'},
 				cancel: { btn: false, label: 'Cancel'},
-			};					
+			};
 			
 		};
 		
 		var alerts = {
+			group: {
+				save: 'New group successfully added',
+				update: 'Group info successfully updated',
+				delete: 'Group info successfully deleted'
+			},
 			user_account: {
 				save: 'New account successfully added',
-				update: 'Account info successfully updated'
+				update: 'Account info successfully updated',
+				delete: 'Account info successfully deleted'
+			},
+			department: {
+				save: 'New department successfully added',
+				update: 'Deparment info successfully updated',
+				delete: 'Department info successfully deleted'
 			},
 		};
 		
 		var confirmations = {
+			group: {
+				delete: 'Are you sure you want to delete this group info?'
+			},
 			user_account: {
 				delete: 'Are you sure you want to delete this user account?'
+			},
+			department: {
+				delete: 'Are you sure you want to delete this department info?'
 			},
 		};
 		
@@ -135,6 +152,11 @@ angular.module('app-module', ['ui.bootstrap','bootstrap-modal','block-ui','boots
 				}, 500);
 			});
 			
+			if (scope.form.name == 'group') {
+				
+				privileges(scope);				
+				
+			};
 			
 			if (scope.form.name == 'user_account') {
 				
@@ -174,7 +196,7 @@ angular.module('app-module', ['ui.bootstrap','bootstrap-modal','block-ui','boots
 			}).then(function success(response) {
 				
 				bui.hide();
-				if (scope.user_account.id == 0) growl.show('success',{from: 'top', amount: 55},alerts[scope.form.name].save);				
+				if (scope[scope.form.name][scope.form.id] == 0) growl.show('success',{from: 'top', amount: 55},alerts[scope.form.name].save);				
 				else growl.show('success',{from: 'top', amount: 55},alerts[scope.form.name].update);				
 				self.list(scope);								
 				
@@ -186,7 +208,7 @@ angular.module('app-module', ['ui.bootstrap','bootstrap-modal','block-ui','boots
 			
 		};
 		
-		self.delete = function(scope,row) {
+		self.delete = function(scope,row) {		
 			
 			var onOk = function() {
 				
@@ -195,7 +217,8 @@ angular.module('app-module', ['ui.bootstrap','bootstrap-modal','block-ui','boots
 					url: 'handlers/'+scope.list+'/delete.php',
 					data: {[scope.form.id]: row[scope.form.id]}
 				}).then(function mySuccess(response) {
-
+					
+					growl.show('danger',{from: 'top', amount: 55},alerts[scope.form.name].delete);
 					self.list(scope);
 
 				}, function myError(response) {
@@ -224,6 +247,24 @@ angular.module('app-module', ['ui.bootstrap','bootstrap-modal','block-ui','boots
 			},function myError(response) {
 				
 			});	
+			
+		};
+
+		function privileges(scope) {
+			
+			$http({
+			  method: 'POST',
+			  url: 'handlers/privileges.php',
+			   data: {id: scope.group.group_id}
+			}).then(function mySuccess(response) {
+				
+				scope.privileges = angular.copy(response.data);
+				
+			}, function myError(response) {
+				
+				//
+				
+			});				
 			
 		};		
 	

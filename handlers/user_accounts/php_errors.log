@@ -1,0 +1,28 @@
+[17-Jun-2018 21:40:00 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'groups' in 'field list' in C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php:39
+Stack trace:
+#0 C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php(39): PDO->query('SELECT *, DATE_...')
+#1 C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php(175): pdo_db->getData('SELECT *, DATE_...')
+#2 C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\handlers\user_accounts\user_accounts.php(9): pdo_db->allObj(Array)
+#3 {main}
+  thrown in C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php on line 39
+[17-Jun-2018 21:40:21 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'groups' in 'field list' in C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php:39
+Stack trace:
+#0 C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php(39): PDO->query('SELECT *, DATE_...')
+#1 C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php(175): pdo_db->getData('SELECT *, DATE_...')
+#2 C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\handlers\user_accounts\user_accounts.php(9): pdo_db->allObj(Array)
+#3 {main}
+  thrown in C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php on line 39
+[17-Jun-2018 21:42:44 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'asd' in 'field list' in C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php:39
+Stack trace:
+#0 C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php(39): PDO->query('SELECT id, grou...')
+#1 C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php(111): pdo_db->getData('SELECT id, grou...')
+#2 C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\handlers\user_accounts\view.php(10): pdo_db->getObj(Array, Array)
+#3 {main}
+  thrown in C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php on line 39
+[17-Jun-2018 21:46:58 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dtrsys.asd' doesn't exist in C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php:39
+Stack trace:
+#0 C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php(39): PDO->query('SELECT group_id...')
+#1 C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php(119): pdo_db->getData('SELECT group_id...')
+#2 C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\handlers\user_accounts\view.php(10): pdo_db->getObj(Array, Array)
+#3 {main}
+  thrown in C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php on line 39

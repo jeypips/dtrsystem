@@ -6,10 +6,8 @@ require_once '../../db.php';
 
 $con = new pdo_db("employees");
 
-$employee = $con->get($_POST['where'],$_POST['model']);
-
-$deparment = $con->getData("SELECT dept_id, dept_name FROM departments WHERE dept_id = ".$employee[0]['employee_dept']);
-$employee[0]['employee_dept'] = $deparment[0];	
+$_POST['model']['employee_dept'] = array("employee_dept"=>array("departments"=>["dept_id","dept_name"]));
+$employee = $con->getObj($_POST['where'],$_POST['model']);
 
 echo json_encode($employee[0]);
 
