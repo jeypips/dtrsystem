@@ -1,0 +1,16 @@
+[16-Jun-2018 21:23:45 Asia/Manila] PHP Notice:  Undefined index: group in C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\handlers\groups\save.php on line 22
+[16-Jun-2018 21:23:45 Asia/Manila] PHP Stack trace:
+[16-Jun-2018 21:23:45 Asia/Manila] PHP   1. {main}() C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\handlers\groups\save.php:0
+[16-Jun-2018 21:23:45 Asia/Manila] PHP Notice:  Undefined index: group in C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\handlers\groups\save.php on line 28
+[16-Jun-2018 21:23:45 Asia/Manila] PHP Stack trace:
+[16-Jun-2018 21:23:45 Asia/Manila] PHP   1. {main}() C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\handlers\groups\save.php:0
+[16-Jun-2018 21:23:45 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php on line 217
+[16-Jun-2018 21:23:45 Asia/Manila] PHP Stack trace:
+[16-Jun-2018 21:23:45 Asia/Manila] PHP   1. {main}() C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\handlers\groups\save.php:0
+[16-Jun-2018 21:23:45 Asia/Manila] PHP   2. pdo_db->insertData() C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\handlers\groups\save.php:28
+[16-Jun-2018 21:23:45 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES )' at line 1 in C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php:232
+Stack trace:
+#0 C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php(232): PDO->prepare('INSERT INTO gro...')
+#1 C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\handlers\groups\save.php(28): pdo_db->insertData(NULL)
+#2 {main}
+  thrown in C:\Users\MISD-004\Desktop\UwAmp310\www\dtrsystem\db.php on line 232

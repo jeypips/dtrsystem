@@ -22,19 +22,19 @@
 		
 		<!-- BEGIN CSS for this page -->
 		<link rel="stylesheet" type="text/css" href="assets/datatables/datatables.css"/>	
-		<style>	
+		<style type="text/css">	
 			td.details-control {
-			background: url('assets/plugins/datatables/img/details_open.png') no-repeat center center;
-			cursor: pointer;
+				background: url('assets/plugins/datatables/img/details_open.png') no-repeat center center;
+				cursor: pointer;
 			}
 			tr.shown td.details-control {
-			background: url('assets/plugins/datatables/img/details_close.png') no-repeat center center;
+				background: url('assets/plugins/datatables/img/details_close.png') no-repeat center center;
 			}
 		</style>	
 		
 </head>
 
-<body class="" ng-app="groups" ng-controller="groupsCtrl" account-profile>
+<body class="" ng-app="maintenance" ng-controller="maintenanceCtrl" ng-init="form = {}; form.name = 'group'; form.id = 'group_id'; list = 'groups'" account-profile>
 
 <div id="main">
 
@@ -205,19 +205,17 @@
 					<li class="submenu" ng-show="profile.pages_access.dashboard.value">
 						<a class="" href="index.html"><i class="fa fa-fw fa-tachometer"></i><span> Dashboard </span> </a>
 					</li>
-					<li class="submenu" ng-show="profile.pages_access.departments.value">
-						<a class="" href="departments.html"><i class="fa fa-fw fa-building"></i><span> Departments </span> </a>
-					</li>
 					<li class="submenu" ng-show="profile.pages_access.employees.value">
 						<a class="" href="employees.html"><i class="fa fa-fw fa-users"></i><span> Employees </span> </a>
 					</li>
 					<li class="submenu" ng-show="profile.pages_access.maintenance.value">
 						<a href="#" class="active"><i class="fa fa-fw fa-code"></i> <span> Maintenance </span> <span class="menu-arrow"></span></a>
-							<ul class="list-unstyled">
-								<li class="active"><a href="groups.html">Groups</a></li>
+                            <ul class="list-unstyled">
+                                <li class="active"><a href="groups.html">Groups</a></li>
 								<li><a href="accounts.html">Accounts</a></li>
+								<li><a href="departments.html">Departments</a></li>
 								<li><a href="schemes.html">Schemes</a></li>
-							</ul>
+                            </ul>
                     </li>
 				</ul>
 				<div class="clearfix"></div>
@@ -308,10 +306,10 @@
 	<script src="angular/modules/validation/validate.js"></script>
 	<script src="angular/modules/post/window-open-post.js"></script>	
 	<script src="modules/module-access.js"></script>
-	<script src="modules/groups.js"></script>
+	<script src="modules/maintenance.js"></script>
 
 	<!-- controller -->
-	<script src="controllers/groups.js"></script>	
+	<script src="controllers/maintenance.js"></script>	
 
 </body>
 </html>

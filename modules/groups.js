@@ -1,4 +1,4 @@
-angular.module('app-module', ['bootstrap-modal','ui.bootstrap','block-ui','bootstrap-growl','bootstrap-modal','form-validator','window-open-post']).factory('app', function($http,$timeout,$compile,bui,growl,bootstrapModal,validate,printPost) {
+angular.module('app-module', ['bootstrap-modal','ui.bootstrap','block-ui','bootstrap-growl','form-validator','window-open-post']).factory('app', function($http,$timeout,$compile,bui,growl,bootstrapModal,validate,printPost) {
 
 	function app() {
 
@@ -97,7 +97,7 @@ angular.module('app-module', ['bootstrap-modal','ui.bootstrap','block-ui','boots
 		};	
 		
 		self.group = function(scope,row) {			
-			
+						
 			bui.show();
 			
 			scope.views.list = false;
@@ -110,7 +110,7 @@ angular.module('app-module', ['bootstrap-modal','ui.bootstrap','block-ui','boots
 				$timeout(function() {
 					
 					$compile($('#content')[0])(scope);
-					
+
 					if (row != null) {
 						
 						$http({
@@ -128,7 +128,7 @@ angular.module('app-module', ['bootstrap-modal','ui.bootstrap','block-ui','boots
 							bui.hide();				
 							
 						});
-						
+
 					} else {
 						
 						scope.group = {};
